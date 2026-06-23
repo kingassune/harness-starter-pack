@@ -17,16 +17,16 @@
 
 ---
 
-## ▢ Level 0 — Orientation
+## ▣ Level 0 — Orientation
 
 **READ**
-- [ ] Read the Orientation + Mental Model pages.
-- [ ] Write your own one-paragraph definition of "harness."
-- [ ] Draw the loop (observe → plan → act → verify) and the 5 primitives from memory.
+- [x] Read the Orientation + Mental Model pages.
+- [x] Write your own one-paragraph definition of "harness."
+- [x] Draw the loop (observe → plan → act → verify) and the 5 primitives from memory.
 
 **BUILD**
-- [ ] Pick the task your first harness will tackle (one concrete, verifiable thing).
-- [ ] Pick your stack: model/provider + framework (Claude Agent SDK or LangGraph).
+- [x] Pick the task your first harness will tackle (one concrete, verifiable thing).
+- [x] Pick your stack: model/provider + framework (Claude Agent SDK or LangGraph).
 
 **Exit:** you can explain what a harness is and why every component is temporary.
 
@@ -148,7 +148,7 @@
 ### Scorecard
 | Level | Read | Build | Exit met |
 |-------|------|-------|----------|
-| 0 — Orientation | ☐ | ☐ | ☐ |
+| 0 — Orientation | ☑ | ☑ | ☑ |
 | 1 — Foundations | ☐ | ☐ | ☐ |
 | 2 — Primitives  | ☐ | ☐ | ☐ |
 | 3 — Build       | ☐ | ☐ | ☐ |
