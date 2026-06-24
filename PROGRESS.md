@@ -17,33 +17,33 @@
 
 ---
 
-## ▢ Level 0 — Orientation
+## ▣ Level 0 — Orientation
 
 **READ**
-- [ ] Read the Orientation + Mental Model pages.
-- [ ] Write your own one-paragraph definition of "harness."
-- [ ] Draw the loop (observe → plan → act → verify) and the 5 primitives from memory.
+- [x] Read the Orientation + Mental Model pages.
+- [x] Write your own one-paragraph definition of "harness."
+- [x] Draw the loop (observe → plan → act → verify) and the 5 primitives from memory.
 
 **BUILD**
-- [ ] Pick the task your first harness will tackle (one concrete, verifiable thing).
-- [ ] Pick your stack: model/provider + framework (Claude Agent SDK or LangGraph).
+- [x] Pick the task your first harness will tackle (one concrete, verifiable thing).
+- [x] Pick your stack: model/provider + framework (Claude Agent SDK or LangGraph).
 
 **Exit:** you can explain what a harness is and why every component is temporary.
 
 ---
 
-## ▢ Level 1 — Foundations
+## ▣ Level 1 — Foundations
 
 **READ**
-- [ ] Both *Harness Engineering* essays (OpenAI + Fowler).
-- [ ] *Building Effective Agents* (Anthropic).
-- [ ] *Harness Design for Long-Running Application Development*.
-- [ ] *The Anatomy of an Agent Harness* (LangChain).
-- [ ] Skim *Writing Effective Tools* / *Beyond Permission Prompts* / *Demystifying Evals*.
+- [x] Both *Harness Engineering* essays (OpenAI + Fowler).
+- [x] *Building Effective Agents* (Anthropic).
+- [x] *Harness Design for Long-Running Application Development*.
+- [x] *The Anatomy of an Agent Harness* (LangChain).
+- [x] Skim *Writing Effective Tools* / *Beyond Permission Prompts* / *Demystifying Evals*.
 
 **BUILD**
-- [ ] Install your chosen framework; run its quickstart end to end.
-- [ ] Confirm you can make one successful model call inside a loop.
+- [x] Install your chosen framework; run its quickstart end to end.
+- [x] Confirm you can make one successful model call inside a loop.
 
 **Exit:** you can name the 4 loop steps, 5 primitives, and why assumptions expire.
 
@@ -148,8 +148,8 @@
 ### Scorecard
 | Level | Read | Build | Exit met |
 |-------|------|-------|----------|
-| 0 — Orientation | ☐ | ☐ | ☐ |
-| 1 — Foundations | ☐ | ☐ | ☐ |
+| 0 — Orientation | ☑ | ☑ | ☑ |
+| 1 — Foundations | ☑ | ☑ | ☑ |
 | 2 — Primitives  | ☐ | ☐ | ☐ |
 | 3 — Build       | ☐ | ☐ | ☐ |
 | 4 — Scale       | ☐ | ☐ | ☐ |
