@@ -32,7 +32,7 @@
 
 ---
 
-## ▢ Level 1 — Foundations
+## ▣ Level 1 — Foundations
 
 **READ**
 - [x] Both *Harness Engineering* essays (OpenAI + Fowler).
@@ -42,8 +42,8 @@
 - [x] Skim *Writing Effective Tools* / *Beyond Permission Prompts* / *Demystifying Evals*.
 
 **BUILD**
-- [ ] Install your chosen framework; run its quickstart end to end.
-- [ ] Confirm you can make one successful model call inside a loop.
+- [x] Install your chosen framework; run its quickstart end to end.
+- [x] Confirm you can make one successful model call inside a loop.
 
 **Exit:** you can name the 4 loop steps, 5 primitives, and why assumptions expire.
 
@@ -149,7 +149,7 @@
 | Level | Read | Build | Exit met |
 |-------|------|-------|----------|
 | 0 — Orientation | ☑ | ☑ | ☑ |
-| 1 — Foundations | ☑ | ☐ | ☐ |
+| 1 — Foundations | ☑ | ☑ | ☑ |
 | 2 — Primitives  | ☐ | ☐ | ☐ |
 | 3 — Build       | ☐ | ☐ | ☐ |
 | 4 — Scale       | ☐ | ☐ | ☐ |
