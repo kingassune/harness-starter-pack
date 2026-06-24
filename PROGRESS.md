@@ -35,11 +35,11 @@
 ## ▢ Level 1 — Foundations
 
 **READ**
-- [ ] Both *Harness Engineering* essays (OpenAI + Fowler).
-- [ ] *Building Effective Agents* (Anthropic).
-- [ ] *Harness Design for Long-Running Application Development*.
-- [ ] *The Anatomy of an Agent Harness* (LangChain).
-- [ ] Skim *Writing Effective Tools* / *Beyond Permission Prompts* / *Demystifying Evals*.
+- [x] Both *Harness Engineering* essays (OpenAI + Fowler).
+- [x] *Building Effective Agents* (Anthropic).
+- [x] *Harness Design for Long-Running Application Development*.
+- [x] *The Anatomy of an Agent Harness* (LangChain).
+- [x] Skim *Writing Effective Tools* / *Beyond Permission Prompts* / *Demystifying Evals*.
 
 **BUILD**
 - [ ] Install your chosen framework; run its quickstart end to end.
@@ -149,7 +149,7 @@
 | Level | Read | Build | Exit met |
 |-------|------|-------|----------|
 | 0 — Orientation | ☑ | ☑ | ☑ |
-| 1 — Foundations | ☐ | ☐ | ☐ |
+| 1 — Foundations | ☑ | ☐ | ☐ |
 | 2 — Primitives  | ☐ | ☐ | ☐ |
 | 3 — Build       | ☐ | ☐ | ☐ |
 | 4 — Scale       | ☐ | ☐ | ☐ |
