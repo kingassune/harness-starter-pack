@@ -1,0 +1,27 @@
+{
+  "app": "knowledge-base",
+  "project": "02-agent-readable-workspace",
+  "features": [
+    {
+      "id": "document-import",
+      "description": "Add a document from title + body; persist it to disk.",
+      "acceptance": "POST /api/documents {title,body} returns 201 with {id,title,body} and writes data/documents/<id>.json.",
+      "status": "passing",
+      "evidence": "POST {title:'Prompt Caching'} -> 201 {id:'prompt-caching',...}; file prompt-caching.json on disk."
+    },
+    {
+      "id": "document-detail",
+      "description": "View a document's full content.",
+      "acceptance": "GET /api/documents/:id returns the full {id,title,body}, or 404 if missing.",
+      "status": "passing",
+      "evidence": "GET /api/documents/prompt-caching -> full body returned."
+    },
+    {
+      "id": "persistence",
+      "description": "Documents survive an app restart.",
+      "acceptance": "An imported document is still listed by /api/documents after the server restarts.",
+      "status": "passing",
+      "evidence": "Imported prompt-caching, restarted, GET /api/documents still lists it."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Knowledge Base</title>
+    <style>
+      body { font-family: sans-serif; margin: 0; }
+      .app { display: flex; height: 100vh; }
+      .list { width: 240px; border-right: 1px solid #ccc; padding: 12px; overflow: auto; }
+      .main { flex: 1; padding: 12px; }
+      .doc { padding: 4px 0; cursor: pointer; color: #06c; }
+      input, textarea { display: block; margin: 4px 0; width: 320px; }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="list">
+        <h3>Documents</h3>
+        <div id="docs">loading…</div>
+        <h4>Import</h4>
+        <input id="t" placeholder="title" />
+        <textarea id="b" placeholder="body"></textarea>
+        <button onclick="importDoc()">Import</button>
+      </div>
+      <div class="main">
+        <h3 id="title">Select a document</h3>
+        <div id="body"></div>
+      </div>
+    </div>
+    <script>
+      function refresh() {
+        fetch('/api/documents')
+          .then((r) => r.json())
+          .then((docs) => {
+            document.getElementById('docs').innerHTML = docs
+              .map((d) => `<div class="doc" onclick="open_('${d.id}')">${d.title}</div>`)
+              .join('');
+          });
+      }
+      // feature: document-detail
+      function open_(id) {
+        fetch('/api/documents/' + id)
+          .then((r) => r.json())
+          .then((d) => {
+            document.getElementById('title').innerText = d.title;
+            document.getElementById('body').innerText = d.body;
+          });
+      }
+      // feature: document-import
+      function importDoc() {
+        fetch('/api/documents', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: document.getElementById('t').value,
+            body: document.getElementById('b').value,
+          }),
+        }).then(() => {
+          document.getElementById('t').value = '';
+          document.getElementById('b').value = '';
+          refresh();
+        });
+      }
+      refresh();
+    </script>
+  </body>
+</html>
