@@ -49,22 +49,22 @@
 
 ---
 
-## ▢ Level 2 — Design Primitives
+## ▣ Level 2 — Design Primitives
 
 **READ** — one pass per primitive
-- [ ] Agent Loop (ReAct + LangGraph low-level).
-- [ ] Planning (Plan-and-Execute).
-- [ ] Context (Compaction + Prompt Caching).
-- [ ] Tool Design (Writing Effective Tools + Tool Annotations).
-- [ ] Skills & MCP (MCP intro + Code Execution with MCP).
-- [ ] Permissions (Beyond Permission Prompts + OWASP LLM06).
-- [ ] Memory (Letta / mem0).
-- [ ] Skim: Orchestration, Verification, Observability, Debugging, HITL.
+- [x] Agent Loop (ReAct + LangGraph low-level).
+- [x] Planning (Plan-and-Execute).
+- [x] Context (Compaction + Prompt Caching).
+- [x] Tool Design (Writing Effective Tools + Tool Annotations).
+- [x] Skills & MCP (MCP intro + Code Execution with MCP).
+- [x] Permissions (Beyond Permission Prompts + OWASP LLM06).
+- [x] Memory (Letta / mem0).
+- [x] Skim: Orchestration, Verification, Observability, Debugging, HITL.
 
 **BUILD**
-- [ ] Define 3–5 tools with clear names + strict schemas.
-- [ ] Add structured-output enforcement (no ad-hoc JSON parsing).
-- [ ] Turn on prompt caching for system prompt + tool defs.
+- [x] Define 3–5 tools with clear names + strict schemas.
+- [x] Add structured-output enforcement (no ad-hoc JSON parsing).
+- [x] Turn on prompt caching for system prompt + tool defs.
 
 **Exit:** all 12 primitives named, each mapped to a loop stage, framework run E2E.
 
@@ -150,7 +150,7 @@
 |-------|------|-------|----------|
 | 0 — Orientation | ☑ | ☑ | ☑ |
 | 1 — Foundations | ☑ | ☑ | ☑ |
-| 2 — Primitives  | ☐ | ☐ | ☐ |
+| 2 — Primitives  | ☑ | ☑ | ☑ |
 | 3 — Build       | ☐ | ☐ | ☐ |
 | 4 — Scale       | ☐ | ☐ | ☐ |
 | 5 — Harden      | ☐ | ☐ | ☐ |
