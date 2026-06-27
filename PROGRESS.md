@@ -49,7 +49,7 @@
 
 ---
 
-## ▢ Level 2 — Design Primitives
+## ▣ Level 2 — Design Primitives
 
 **READ** — one pass per primitive
 - [x] Agent Loop (ReAct + LangGraph low-level).
@@ -62,9 +62,9 @@
 - [x] Skim: Orchestration, Verification, Observability, Debugging, HITL.
 
 **BUILD**
-- [ ] Define 3–5 tools with clear names + strict schemas.
-- [ ] Add structured-output enforcement (no ad-hoc JSON parsing).
-- [ ] Turn on prompt caching for system prompt + tool defs.
+- [x] Define 3–5 tools with clear names + strict schemas.
+- [x] Add structured-output enforcement (no ad-hoc JSON parsing).
+- [x] Turn on prompt caching for system prompt + tool defs.
 
 **Exit:** all 12 primitives named, each mapped to a loop stage, framework run E2E.
 
@@ -150,7 +150,7 @@
 |-------|------|-------|----------|
 | 0 — Orientation | ☑ | ☑ | ☑ |
 | 1 — Foundations | ☑ | ☑ | ☑ |
-| 2 — Primitives  | ☑ | ☐ | ☐ |
+| 2 — Primitives  | ☑ | ☑ | ☑ |
 | 3 — Build       | ☐ | ☐ | ☐ |
 | 4 — Scale       | ☐ | ☐ | ☐ |
 | 5 — Harden      | ☐ | ☐ | ☐ |
