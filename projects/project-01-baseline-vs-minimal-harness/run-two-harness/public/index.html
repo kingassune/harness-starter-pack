@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Knowledge Base</title>
+    <style>
+      body { font-family: sans-serif; margin: 0; }
+      .app { display: flex; height: 100vh; }
+      .list { width: 240px; border-right: 1px solid #ccc; padding: 12px; overflow: auto; }
+      .qa { flex: 1; padding: 12px; }
+      .doc { padding: 4px 0; cursor: default; }
+      .source { color: #555; font-size: 0.85em; margin-top: 6px; }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="list">
+        <h3>Documents</h3>
+        <div id="docs">loading…</div>
+      </div>
+      <div class="qa">
+        <h3>Q&amp;A</h3>
+        <input id="q" placeholder="Ask about a document…" size="40" />
+        <button onclick="ask()">Ask</button>
+        <div id="answer"></div>
+        <div id="source" class="source"></div>
+      </div>
+    </div>
+    <script>
+      // feature: document-list-panel
+      fetch('/api/documents')
+        .then((r) => r.json())
+        .then((docs) => {
+          document.getElementById('docs').innerHTML = docs
+            .map((d) => `<div class="doc">${d.title}</div>`)
+            .join('');
+        });
+
+      // feature: qa-panel
+      function ask() {
+        const q = document.getElementById('q').value;
+        fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ q }),
+        })
+          .then((r) => r.json())
+          .then((res) => {
+            document.getElementById('answer').innerText = res.answer;
+            document.getElementById('source').innerText = res.source
+              ? 'Source: ' + res.source
+              : '';
+          });
+      }
+    </script>
+  </body>
+</html>

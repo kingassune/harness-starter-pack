@@ -1,0 +1,33 @@
+{
+  "app": "knowledge-base",
+  "features": [
+    {
+      "id": "window-launch",
+      "description": "The app launches and serves the UI.",
+      "acceptance": "GET / returns HTTP 200 and HTML containing both panels.",
+      "status": "passing",
+      "evidence": "curl -o /dev/null -w '%{http_code}' http://localhost:3002 -> HTTP 200"
+    },
+    {
+      "id": "document-list-panel",
+      "description": "Left panel lists documents read from the data directory.",
+      "acceptance": "GET /api/documents returns a JSON array of {id,title} read from data/documents/.",
+      "status": "passing",
+      "evidence": "GET /api/documents -> [{id:harness,title:Harness},{id:welcome,title:Welcome}]"
+    },
+    {
+      "id": "qa-panel",
+      "description": "Right panel answers questions grounded in a document, with a citation.",
+      "acceptance": "POST /api/ask {q} returns {answer, source} where source is the matching document title.",
+      "status": "passing",
+      "evidence": "POST /api/ask {q:'harness'} -> {answer:'A harness wraps a model with tools, verification, and rules.', source:'Harness'}"
+    },
+    {
+      "id": "local-data-persistence",
+      "description": "Documents live in the local data directory and survive a restart.",
+      "acceptance": "A document written to data/documents/ is still listed by /api/documents after the server restarts.",
+      "status": "passing",
+      "evidence": "Wrote data/documents/ci.json, restarted server, GET /api/documents still lists CI (+harness,+welcome)."
+    }
+  ]
+}
