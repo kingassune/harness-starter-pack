@@ -1,0 +1,35 @@
+{
+  "app": "knowledge-base",
+  "project": "03-multi-session-continuity",
+  "rule": "Implement ONE feature at a time. Mark passing ONLY with command evidence.",
+  "features": [
+    {
+      "id": "document-chunking",
+      "description": "Split a document body into citable chunks.",
+      "acceptance": "POST /api/index/:id returns chunks > 0; index file stores chunks[] with {i,text}.",
+      "status": "passing",
+      "evidence": "POST /api/index/welcome -> {chunks:3}; data/index/welcome.json has 3 chunks."
+    },
+    {
+      "id": "metadata-extraction",
+      "description": "Capture per-document metadata for retrieval.",
+      "acceptance": "Index record includes metadata {chars, words, chunkCount}.",
+      "status": "passing",
+      "evidence": "welcome metadata -> {chars:101, words:17, chunkCount:3}."
+    },
+    {
+      "id": "indexing-status",
+      "description": "Show what is indexed vs pending.",
+      "acceptance": "GET /api/index/status returns {totalDocuments, indexed, pending[], totalChunks}.",
+      "status": "passing",
+      "evidence": "before: indexed 0 pending [welcome]; after: indexed 1 pending [] totalChunks 3."
+    },
+    {
+      "id": "grounded-qa-citations",
+      "description": "Answer questions from indexed chunks, with a citation.",
+      "acceptance": "POST /api/ask {q} returns {answer, citation:{document, chunk}} from a real chunk.",
+      "status": "passing",
+      "evidence": "ask 'verification' -> answer + citation {document:'Welcome', chunk:2}."
+    }
+  ]
+}

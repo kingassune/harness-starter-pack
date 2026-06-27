@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Knowledge Base — indexed</title>
+    <style>
+      body { font-family: sans-serif; margin: 0; }
+      .app { display: flex; height: 100vh; }
+      .list { width: 260px; border-right: 1px solid #ccc; padding: 12px; overflow: auto; }
+      .main { flex: 1; padding: 12px; }
+      .doc { padding: 4px 0; cursor: pointer; color: #06c; }
+      .status { font-size: 0.85em; color: #555; margin: 8px 0; }
+      .cite { color: #555; font-size: 0.85em; margin-top: 6px; }
+      input, textarea { display: block; margin: 4px 0; width: 320px; }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="list">
+        <h3>Documents</h3>
+        <div id="docs">loading…</div>
+        <div class="status" id="status"></div>
+        <button onclick="indexAll()">Index pending</button>
+        <h4>Import</h4>
+        <input id="t" placeholder="title" />
+        <textarea id="b" placeholder="body"></textarea>
+        <button onclick="importDoc()">Import</button>
+      </div>
+      <div class="main">
+        <h3>Ask</h3>
+        <input id="q" placeholder="Ask about indexed content…" size="40" />
+        <button onclick="ask()">Ask</button>
+        <div id="answer"></div>
+        <div id="cite" class="cite"></div>
+      </div>
+    </div>
+    <script>
+      function refresh() {
+        fetch('/api/documents').then((r) => r.json()).then((docs) => {
+          document.getElementById('docs').innerHTML = docs
+            .map((d) => `<div class="doc">${d.title}</div>`).join('');
+        });
+        fetch('/api/index/status').then((r) => r.json()).then((s) => {
+          document.getElementById('status').innerText =
+            `indexed ${s.indexed}/${s.totalDocuments} docs · ${s.totalChunks} chunks · pending: ${s.pending.join(', ') || 'none'}`;
+          window._pending = s.pending;
+        });
+      }
+      function indexAll() {
+        Promise.all((window._pending || []).map((id) =>
+          fetch('/api/index/' + id, { method: 'POST' }))).then(refresh);
+      }
+      function importDoc() {
+        fetch('/api/documents', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title: t.value, body: b.value }),
+        }).then(() => { t.value = ''; b.value = ''; refresh(); });
+      }
+      function ask() {
+        fetch('/api/ask', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ q: q.value }),
+        }).then((r) => r.json()).then((res) => {
+          document.getElementById('answer').innerText = res.answer;
+          document.getElementById('cite').innerText = res.citation
+            ? `— ${res.citation.document}, chunk ${res.citation.chunk}` : '';
+        });
+      }
+      refresh();
+    </script>
+  </body>
+</html>
