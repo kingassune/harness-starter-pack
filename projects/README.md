@@ -28,7 +28,7 @@ brought into this repo so they can be completed here.
 | 3 | [Multi-Session Continuity](./project-03-multi-session-continuity/BRIEF.md) | State files + verification-gated progress | ☑ |
 | 4 | [Runtime Feedback & Scope Control](./project-04-runtime-feedback/BRIEF.md) | Structured logging + architecture guards | ☑ |
 | 5 | [Self-Verification & Role Separation](./project-05-self-verification-role-separation/BRIEF.md) | Plan/Gen/Eval split catches defects | ☑ |
-| 6 | [Complete Harness (Capstone)](./project-06-complete-harness-capstone/BRIEF.md) | Assemble all five + benchmark + ablation | ☐ |
+| 6 | [Complete Harness (Capstone)](./project-06-complete-harness-capstone/BRIEF.md) | Assemble all five + benchmark + ablation | ☑ |
 
 > These map directly onto the PROGRESS.md **Level 3** READ item
 > ("Work through *Learn Harness Engineering*").

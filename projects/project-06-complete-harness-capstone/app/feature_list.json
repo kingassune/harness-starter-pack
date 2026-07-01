@@ -1,0 +1,33 @@
+{
+  "app": "knowledge-base-capstone",
+  "features": [
+    {
+      "id": "harness-benchmark",
+      "description": "Strong harness measurably beats weak harness.",
+      "acceptance": "scripts/benchmark.sh shows strong 5/5 vs weak 0/5.",
+      "status": "passing",
+      "evidence": "strong SCORE 5/5; weak SCORE 0/5."
+    },
+    {
+      "id": "ablation-causality",
+      "description": "Removing a mechanism drops the score measurably.",
+      "acceptance": "scripts/ablation.sh shows >=2 mechanisms with a measurable drop.",
+      "status": "passing",
+      "evidence": "role-sep 5->2, chunking-fix 5->4, persistence 5->4."
+    },
+    {
+      "id": "cleanup-clean",
+      "description": "Codebase is maintainable / clean.",
+      "acceptance": "scripts/cleanup-scanner.sh exits 0 with CLEAN.",
+      "status": "passing",
+      "evidence": "cleanup-scanner.sh -> CLEAN (exit 0)."
+    },
+    {
+      "id": "app-runs",
+      "description": "The assembled app serves and answers grounded questions.",
+      "acceptance": "POST /api/documents then POST /api/ask returns answer + citation.",
+      "status": "passing",
+      "evidence": "see session-handoff.md run log."
+    }
+  ]
+}
