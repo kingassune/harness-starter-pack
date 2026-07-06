@@ -70,19 +70,19 @@
 
 ---
 
-## ▢ Level 3 — Build Your First Harness
+## ▣ Level 3 — Build Your First Harness
 
 **READ**
-- [ ] Work through *Learn Harness Engineering* course (or shareAI-lab/learn-claude-code).
-- [ ] Read smolagents or rasbt/mini-coding-agent core, front to back.
-- [ ] Read *Skill Issue: Harness Engineering for Coding Agents*.
+- [x] Work through *Learn Harness Engineering* course (or shareAI-lab/learn-claude-code).
+- [x] Read smolagents or rasbt/mini-coding-agent core, front to back.
+- [x] Read *Skill Issue: Harness Engineering for Coding Agents*.
 
 **BUILD — the "Hello, Harness" milestone**
-- [ ] Loop runs observe → plan → act → verify.
-- [ ] Writes a `PLAN.md` and updates it each turn.
-- [ ] Destructive tools gated behind a permission check.
-- [ ] Runs a test after every change; feeds **only summary lines** back to context.
-- [ ] Logs full output to a file, not the context window.
+- [x] Loop runs observe → plan → act → verify.
+- [x] Writes a `PLAN.md` and updates it each turn.
+- [x] Destructive tools gated behind a permission check.
+- [x] Runs a test after every change; feeds **only summary lines** back to context.
+- [x] Logs full output to a file, not the context window.
 
 **Exit:** a single-agent harness completes your Level 0 task on its own.
 
@@ -151,7 +151,7 @@
 | 0 — Orientation | ☑ | ☑ | ☑ |
 | 1 — Foundations | ☑ | ☑ | ☑ |
 | 2 — Primitives  | ☑ | ☑ | ☑ |
-| 3 — Build       | ☐ | ☐ | ☐ |
+| 3 — Build       | ☑ | ☑ | ☑ |
 | 4 — Scale       | ☐ | ☐ | ☐ |
 | 5 — Harden      | ☐ | ☐ | ☐ |
 | 6 — Ship        | ☐ | ☐ | ☐ |
