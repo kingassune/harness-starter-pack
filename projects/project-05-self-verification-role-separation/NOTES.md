@@ -33,3 +33,12 @@ V3 closes both: requirements made explicit, "done" made provable.
 Quality isn't only about the model — it's about **how many independent
 perspectives** the work passes through and **whether "done" is defined before
 building**. Separate the roles and the score climbs on its own.
+
+## Close-out — winner wired into a real app
+`app/server.js` imports the winning V3 filter and serves it over HTTP. Verified:
+- `?q=evals` → `[Evals]` (case-insensitive)
+- `?q=tools` → `[Harness]` (body match)
+- `?q=  prompt ` → `[Prompt Caching]` (whitespace-tolerant)
+- no query → all 3
+
+The 5/5 logic now runs in production, not just in `compare.js`.
