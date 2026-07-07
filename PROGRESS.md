@@ -104,7 +104,7 @@
 
 ---
 
-## ▢ Level 5 — Harden, Verify, Observe
+## ▣ Level 5 — Harden, Verify, Observe
 
 **READ**
 - [x] *Demystifying Evals* + *Agent Evaluation Readiness Checklist*.
@@ -112,9 +112,9 @@
 - [x] Skim a sandbox option (E2B / Daytona / NVIDIA OpenShell).
 
 **BUILD**
-- [ ] Add promptfoo CI evals — capability evals separate from regression evals.
-- [ ] Add tracing (Langfuse or OpenLLMetry) on every inference + tool call.
-- [ ] Run the lethal-trifecta check; lock hooks/MCP config from agent edits.
+- [x] Add promptfoo CI evals — capability evals separate from regression evals.
+- [x] Add tracing (Langfuse or OpenLLMetry) on every inference + tool call.
+- [x] Run the lethal-trifecta check; lock hooks/MCP config from agent edits.
 
 **Exit:** a regression is caught by CI before it ships; every step is traceable.
 
@@ -153,7 +153,7 @@
 | 2 — Primitives  | ☑ | ☑ | ☑ |
 | 3 — Build       | ☑ | ☑ | ☑ |
 | 4 — Scale       | ☑ | ☑ | ☑ |
-| 5 — Harden      | ☑ | ☐ | ☐ |
+| 5 — Harden      | ☑ | ☑ | ☑ |
 | 6 — Ship        | ☐ | ☐ | ☐ |
 | Hero Gate       | — | — | ☐ |
 

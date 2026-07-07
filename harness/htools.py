@@ -9,8 +9,9 @@ import os
 import re
 import subprocess
 
-# The sandbox: the harness may only write inside here.
-WORKSPACE = os.path.join(os.path.dirname(__file__), ".run")
+# The sandbox: the harness may only write inside here. Absolute so the
+# within_workspace() check holds no matter how this module is imported.
+WORKSPACE = os.path.abspath(os.path.join(os.path.dirname(__file__), ".run"))
 
 # Destructive command NAMES, matched as whole tokens (not substrings — so "dd"
 # never matches inside "add").
@@ -40,10 +41,23 @@ def within_workspace(path):
     return ap == WORKSPACE or ap.startswith(WORKSPACE + os.sep)
 
 
+# Config the agent must never edit (hooks / MCP / harness settings). Locking
+# these closes the "agent widens its own permissions" hole. (Level 5)
+PROTECTED_CONFIG = {"settings.json", "settings.local.json", ".mcp.json", "mcp.json", "hooks.json"}
+
+
+def is_protected_config(path):
+    base = os.path.basename(path)
+    parts = path.split(os.sep)
+    return base in PROTECTED_CONFIG or "hooks" in base or ".claude" in parts
+
+
 # ---- permission gate -------------------------------------------------------
 def check_permission(name, args):
     """Return (allowed: bool, reason: str). This is the harness's guardrail."""
     if name == "write_file":
+        if is_protected_config(args.get("path", "")):
+            return False, "protected hooks/MCP/settings config is locked from agent edits"
         if not within_workspace(args.get("path", "")):
             return False, f"write outside sandbox {WORKSPACE} denied"
         return True, "write within sandbox allowed"
