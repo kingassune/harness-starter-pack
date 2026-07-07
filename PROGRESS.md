@@ -91,9 +91,9 @@
 ## ▢ Level 4 — Scale & Orchestrate
 
 **READ**
-- [ ] *Choosing the Right Multi-Agent Architecture*.
-- [ ] *Effective Harnesses for Long-Running Agents*.
-- [ ] The protocol map (MCP / A2A / AG-UI).
+- [x] *Choosing the Right Multi-Agent Architecture*.
+- [x] *Effective Harnesses for Long-Running Agents*.
+- [x] The protocol map (MCP / A2A / AG-UI).
 
 **BUILD**
 - [ ] Add a sandbox (E2B or Daytona) for code execution.
@@ -152,7 +152,7 @@
 | 1 — Foundations | ☑ | ☑ | ☑ |
 | 2 — Primitives  | ☑ | ☑ | ☑ |
 | 3 — Build       | ☑ | ☑ | ☑ |
-| 4 — Scale       | ☐ | ☐ | ☐ |
+| 4 — Scale       | ☑ | ☐ | ☐ |
 | 5 — Harden      | ☐ | ☐ | ☐ |
 | 6 — Ship        | ☐ | ☐ | ☐ |
 | Hero Gate       | — | — | ☐ |
