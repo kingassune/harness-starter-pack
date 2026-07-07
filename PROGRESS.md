@@ -107,9 +107,9 @@
 ## ▢ Level 5 — Harden, Verify, Observe
 
 **READ**
-- [ ] *Demystifying Evals* + *Agent Evaluation Readiness Checklist*.
-- [ ] *How We Contain Claude* + OWASP LLM01 (prompt injection).
-- [ ] Skim a sandbox option (E2B / Daytona / NVIDIA OpenShell).
+- [x] *Demystifying Evals* + *Agent Evaluation Readiness Checklist*.
+- [x] *How We Contain Claude* + OWASP LLM01 (prompt injection).
+- [x] Skim a sandbox option (E2B / Daytona / NVIDIA OpenShell).
 
 **BUILD**
 - [ ] Add promptfoo CI evals — capability evals separate from regression evals.
@@ -153,7 +153,7 @@
 | 2 — Primitives  | ☑ | ☑ | ☑ |
 | 3 — Build       | ☑ | ☑ | ☑ |
 | 4 — Scale       | ☑ | ☑ | ☑ |
-| 5 — Harden      | ☐ | ☐ | ☐ |
+| 5 — Harden      | ☑ | ☐ | ☐ |
 | 6 — Ship        | ☐ | ☐ | ☐ |
 | Hero Gate       | — | — | ☐ |
 
