@@ -88,7 +88,7 @@
 
 ---
 
-## ▢ Level 4 — Scale & Orchestrate
+## ▣ Level 4 — Scale & Orchestrate
 
 **READ**
 - [x] *Choosing the Right Multi-Agent Architecture*.
@@ -96,9 +96,9 @@
 - [x] The protocol map (MCP / A2A / AG-UI).
 
 **BUILD**
-- [ ] Add a sandbox (E2B or Daytona) for code execution.
-- [ ] Add a second specialized agent **only if** isolation/parallelism earns it.
-- [ ] Add checkpoint-resume so a long task survives a restart.
+- [x] Add a sandbox (E2B or Daytona) for code execution.
+- [x] Add a second specialized agent **only if** isolation/parallelism earns it.
+- [x] Add checkpoint-resume so a long task survives a restart.
 
 **Exit:** harness handles a task bigger than one context window without losing progress.
 
@@ -152,7 +152,7 @@
 | 1 — Foundations | ☑ | ☑ | ☑ |
 | 2 — Primitives  | ☑ | ☑ | ☑ |
 | 3 — Build       | ☑ | ☑ | ☑ |
-| 4 — Scale       | ☑ | ☐ | ☐ |
+| 4 — Scale       | ☑ | ☑ | ☑ |
 | 5 — Harden      | ☐ | ☐ | ☐ |
 | 6 — Ship        | ☐ | ☐ | ☐ |
 | Hero Gate       | — | — | ☐ |
